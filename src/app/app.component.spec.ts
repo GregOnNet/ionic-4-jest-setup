@@ -11,10 +11,12 @@ describe('AppComponent', () => {
   let statusBarSpy, splashScreenSpy, platformReadySpy, platformSpy;
 
   beforeEach(async(() => {
-    statusBarSpy = jest.setMock('StatusBar', ['styleDefault']);
-    splashScreenSpy = jest.setMock('SplashScreen', ['hide']);
-    platformReadySpy = Promise.resolve();
-    platformSpy = jest.setMock('Platform', { ready: platformReadySpy });
+    statusBarSpy = { styleDefault: jest.fn() };
+    splashScreenSpy = { hide: jest.fn() };
+    platformReadySpy = jest.fn().mockImplementation(() => Promise.resolve());
+    platformSpy = {
+      ready: platformReadySpy
+    };
 
     TestBed.configureTestingModule({
       declarations: [AppComponent],
@@ -36,7 +38,7 @@ describe('AppComponent', () => {
   it('should initialize the app', async () => {
     TestBed.createComponent(AppComponent);
     expect(platformSpy.ready).toHaveBeenCalled();
-    await platformReadySpy;
+    await platformReadySpy();
     expect(statusBarSpy.styleDefault).toHaveBeenCalled();
     expect(splashScreenSpy.hide).toHaveBeenCalled();
   });
