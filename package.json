@@ -7,7 +7,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "jest",
+    "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "test:watch": "jest --watch"
@@ -41,6 +41,8 @@
     "@angular/compiler": "~7.2.2",
     "@angular/compiler-cli": "~7.2.2",
     "@angular/language-service": "~7.2.2",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.4.3",
     "@ionic/angular-toolkit": "~1.5.1",
     "@types/jest": "^24.0.11",
     "@types/node": "~10.14.2",
