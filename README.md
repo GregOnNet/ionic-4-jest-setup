@@ -1,7 +1,7 @@
 ## Not intended to be used in production
 
 This repository is used to clarify an issue in the ionic framework.
-You can follow the discussion in .
+You can follow the discussion in [18197](https://github.com/ionic-team/ionic/issues/18197).
 
 ## Reproduction Steps
 
