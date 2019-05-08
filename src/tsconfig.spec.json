@@ -6,7 +6,8 @@
       "jest",
       "node"
     ],
-    "module": "commonjs"
+    "module": "commonjs",
+    "allowJs": true,
   },
   "files": [
     "zone-flags.ts",
